@@ -625,8 +625,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="mb-5">Reach Out</h2>
-                <form action="send_email.php" method="post" id="contact-form">
+                <h2 class="contact-heading mb-5">Reach Out</h2>
+                <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                    <!-- Replace with your Access Key -->
+                    <input type="hidden" name="access_key" value="0675f10a-b4b0-425d-82b4-0e9d789aeaa4">
+
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name" required>
@@ -643,6 +646,13 @@
                         <label for="message">Message Me</label>
                         <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
                     </div>
+                    
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <!-- Optional Custom Confirmation / Success Page -->
+                    <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
